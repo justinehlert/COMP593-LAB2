@@ -40,6 +40,22 @@ def main():
             item = item.lower()
         dict['pizza toppings'].sort()
 
+    def add_movie(info, movieTitle, movieGenre):
+        new_item = {
+            'title': movieTitle,
+            'genre': movieGenre
+        }
+        info['movies'].append(new_item)
+    
+    def print_movie_genres(info):
+        print('I like to watch', end=" ")
+        for item in range(len(info['movies'])):
+            if item < len(info['movies']) - 1:
+                print(info['movies'][item]['genre'], end=", ")
+            else:
+                print(f"and {info['movies'][item]['genre']}", end=" ")
+        print("movies.")
+
     # Step 3: Print student name and ID
     print_student_name_and_id(about_me)
 
@@ -47,7 +63,6 @@ def main():
     print_pizza_toppings(about_me)
 
     # Step 5: Add pizza toppings to the data structure
-    # TODO: Change to pizza toppings you like
     add_pizza_toppings(about_me, ['soylent green', 'racht'])
     print_pizza_toppings(about_me)
 
